@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Alegreya:400,700&amp;subset=latin-ext" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="./responsive-START.css">
+  <title>Wizytówka!</title>
+  
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <div class="top">
+      <header class="me">
+        <h1>Mikołaj Kamiński</h1>
+      </header>
+      <div class="right right1">
+        
+        <a href="https://pl-pl.facebook.com/" target="blank">
+          <p class="social"><img src="https://img.icons8.com/color/96/000000/facebook.png"></p>
+        </a>
+        <p>Zobacz mnie na Facebooku</p>
+      </div>
+      <div class="right right2">
+        <a href="https://www.youtube.com/" target=blank>
+          <p class="social"><img src="https://img.icons8.com/color/96/000000/youtube-play.png"></p>
+        </a>
+        <p>Obejrzyj moje filmy!</p>
+      </div>
+
+    </div>
+    <nav class="menu">
+      <button aria-expanded="false" aria-controls="menu-list">
+        <span class="open">☰</span>
+        <span class="close">×</span>
+        Menu
+      </button>
+      <ul id="menu-list">
+        <li>
+          <a href="">Strona Głowna</a>
+        </li>
+        <li>
+          <a href="">Studia</a>
+        </li>
+        <li>
+          <a href="">O filmach</a>
+        </li>
+        <li>
+          <a href="">O podróżach</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="infos">
+      <div class="info">
+        <span class="icon">🏠</span>
+        <h3>O mnie</h3>
+        <p>Moim miastem rodzinnym jest Koszalin. Zachęcam wszystkich do przyjazdu nad piękne polskie morze.</p>
+      </div>
+      <div class="info">
+        <span class="icon">📚</span>
+        <h3>Co studiuję?</h3>
+        <p>Jestem studentem drugiego roku Politechniki Wrocławskiej na kierunku Informatyka.</p>
+      </div>
+      <div class="info">
+        <span class="icon">🎥</span>
+        <h3>Za obiektywem</h3>
+        <p>Od kliku lat zajmuję się amatorskim kręceniem filmów ze znajomymi i to jedno z moich ulubionych zajęć.</p>
+      </div>
+      <div class="info">
+        <span class="icon">🏎️</span>
+        <h3>Hobby</h3>
+        <p>Od dziecka pasjonuję się samochodami. W wolnych chwilach przeglądam nałogowo Otomoto.pl</p>
+      </div>
+    </section>
+
+    <div class="cytat">
+      <img src="images/main_bolid.jpg" alt="Bolid" class="bolid">
+      <div class="middle">
+        <div class="text">Wyniosły cytat</div>
+      </div>
+    </div>
+
+
+  <script>
+    const navButton = document.querySelector('button[aria-expanded]');
+
+    function toggleNav({ target }) {
+      const expanded = target.getAttribute('aria-expanded') === 'true' || false;
+      navButton.setAttribute('aria-expanded', !expanded);
+    }
+    navButton.addEventListener('click', toggleNav);
+  </script>
+
+</body>
+
+</html>
