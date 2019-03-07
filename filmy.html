@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Alegreya:400,700&amp;subset=latin-ext" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="theme_film.css">
+  <link rel="stylesheet" href="./responsive-START.css">
+  <title>Galeria Filmów</title>
+  
+</head>
+
+<body>
+
+  <div class="wrapper">
+    
+      
+
+    </div>
+    <nav class="menu">
+      <button aria-expanded="false" aria-controls="menu-list">
+        <span class="open">☰</span>
+        <span class="close">×</span>
+        Menu
+      </button>
+      <ul id="menu-list">
+        <li>
+          <a href="index.html">Strona Głowna</a>
+        </li>
+        <li>
+          <a href="galeria_racing.html">Studia</a>
+        </li>
+        <li>
+          <a href="filmy.html">O filmach</a>
+        </li>
+        <li>
+          <a href="galeria_podroze.html">O podróżach</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="infos">
+      <div class="info">
+        <span class="icon">🎥</span>
+        <h3>Porachunki Mafii</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/STvnU7XY_2U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+      <div class="info">
+        <span class="icon">🎥</span>
+        <h3>PWR Racing Team</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/bbqJTAaeja4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+            </div>
+      <div class="info">
+        <span class="icon">🎥</span>
+        <h3>Horror</h3>
+       <iframe width="560" height="315" src="https://www.youtube.com/embed/2t8DwUvdC88" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </section>
+
+   
+
+
+  <script>
+    const navButton = document.querySelector('button[aria-expanded]');
+
+    function toggleNav({ target }) {
+      const expanded = target.getAttribute('aria-expanded') === 'true' || false;
+      navButton.setAttribute('aria-expanded', !expanded);
+    }
+    navButton.addEventListener('click', toggleNav);
+  </script>
+
+</body>
+
+</html>

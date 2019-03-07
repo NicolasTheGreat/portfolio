@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl-pl">
 
 <head>
   <link href="https://fonts.googleapis.com/css?family=Alegreya:400,700&amp;subset=latin-ext" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="theme.css">
-  <link rel="stylesheet" href="./responsive-START.css">
+  <link rel="stylesheet" href="theme_galeria_racing.css">
   <title>Wizytówka!</title>
   
 </head>
@@ -14,25 +13,25 @@
 <body>
 
   <div class="wrapper">
-    <div class="top">
-      <header class="me">
-        <h1>Mikołaj Kamiński</h1>
+    <div>
+      <header id="studia">
+        <img id="logo_rac" src="images/PWRRacingLogo.png">
       </header>
-      <div class="right right1">
+      <!-- <div class="right right1">
         
         <a href="https://pl-pl.facebook.com/" target="blank">
           <p class="social"><img src="https://img.icons8.com/color/96/000000/facebook.png"></p>
         </a>
         <p>Zobacz mnie na Facebooku</p>
-      </div>
-      <div class="right right2">
+      </div> -->
+      <!-- <div class="right right2">
         <a href="https://www.youtube.com/" target=blank>
           <p class="social"><img src="https://img.icons8.com/color/96/000000/youtube-play.png"></p>
         </a>
         <p>Obejrzyj moje filmy!</p>
-      </div>
+      </div> -->
 
-    <!-- </div>
+    </div>
     <nav class="menu">
       <button aria-expanded="false" aria-controls="menu-list">
         <span class="open">☰</span>
@@ -41,60 +40,255 @@
       </button>
       <ul id="menu-list">
         <li>
-          <a href="">Strona Głowna</a>
+          <a href="index.html">Strona Głowna</a>
         </li>
         <li>
-          <a href="">Studia</a>
+          <a href="galeria_racing.html">Studia</a>
         </li>
         <li>
-          <a href="">O filmach</a>
+          <a href="filmy.html">O filmach</a>
         </li>
         <li>
-          <a href="">O podróżach</a>
+          <a href="galeria_podroze.html">O podróżach</a>
         </li>
       </ul>
-    </nav> -->
+    </nav>
 
     <section class="infos">
-      <div class="info">
-        <span class="icon">🏠</span>
-        <h3>O mnie</h3>
-        <p>Moim miastem rodzinnym jest Koszalin. Zachęcam wszystkich do przyjazdu nad piękne polskie morze.</p>
-      </div>
-      <div class="info">
-        <span class="icon">📚</span>
-        <h3>Co studiuję?</h3>
-        <p>Jestem studentem drugiego roku Politechniki Wrocławskiej na kierunku Informatyka.</p>
-      </div>
-      <div class="info">
-        <span class="icon">🎥</span>
-        <h3>Za obiektywem</h3>
-        <p>Od kliku lat zajmuję się amatorskim kręceniem filmów ze znajomymi i to jedno z moich ulubionych zajęć.</p>
-      </div>
-      <div class="info">
+      <div class="info main_info">
         <span class="icon">🏎️</span>
-        <h3>Hobby</h3>
-        <p>Od dziecka pasjonuję się samochodami. W wolnych chwilach przeglądam nałogowo Otomoto.pl</p>
+        <h3>Studia / Hobby</h3>
+        <p>Na uczelni jednym z moich zajęć (oprócz studiowania) jest działalność w kole naukowy PWR Racing Team. 
+        Jak można się domyślić działalność koła jest związana z budową samochodu wyścigowego. Jest to bolid klasy Formuła Student, 
+        którym ścigamy się na zawodach na całym świecie.
+        W zespole zajmuję się przede wszystkim prezentacją, a także jestem fotografem i filmowcem.</p>
       </div>
     </section>
 
-    <div class="cytat">
-      <img src="images/main_bolid.jpg" alt="Bolid" class="bolid">
-      <div class="middle">
-        <div class="text">Wyniosły cytat</div>
+
+    <div class="overlay">
+      <div>hello</div>
+      <div class="overlay-inner">
+        <button class="close">x close</button>
+        <img>
       </div>
     </div>
 
+    <section class="gallery">
+    </section>
+    
+    <style>
+      * {
+      box-sizing: border-box;
+      }
 
-  <script>
-    const navButton = document.querySelector('button[aria-expanded]');
+      body {
+      padding: 50px;
+      font-family: sans-serif;
+      background-image: url("images/mechanic3.jpg");
+      background-size: auto;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      }
 
-    function toggleNav({ target }) {
-      const expanded = target.getAttribute('aria-expanded') === 'true' || false;
-      navButton.setAttribute('aria-expanded', !expanded);
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+      margin: 0 0 5px 0;
+      }
+
+      p {
+      margin: 0 0 20px 0;
+      }
+
+      .close {
+      background: none;
+      color: white;
+      border: 0;
+      }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 200px);
+      grid-auto-rows: 200px;
+      grid-auto-flow: dense;
     }
-    navButton.addEventListener('click', toggleNav);
-  </script>
+
+    .item {
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1;
+      grid-template-rows: 1;
+    }
+
+    .item img {
+      grid-column: 1 / -1;
+      grid-row: 1 / -1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .item__overlay {
+      background: #ffc60032;
+      grid-column: 1 / -1;
+      grid-row: 1 / -1;
+      position: relative;
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      transition: 0.2s;
+      transform: translateY(100%);
+    }
+
+    .item__overlay button {
+      background: none;
+      border: 2px solid white;
+      color: white;
+      text-transform: uppercase;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 5px;
+    }
+
+    .item:hover .item__overlay {
+      transform: translateY(0);
+    }
+
+
+    .item.v2 {
+      grid-row: span 2;
+    }
+
+    .item.v3 {
+      grid-row: span 3;
+    }
+
+    .item.v4 {
+      grid-row: span 4;
+    }
+
+    .item.h2 {
+      grid-column: span 2;
+    }
+
+    .item.h3 {
+      grid-column: span 3;
+    }
+
+    .item.h4 {
+      grid-column: span 4;
+    }
+
+
+    .overlay {
+      position: fixed;
+      background: rgba(0, 0, 0, 0.7);
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: none;
+      z-index: 2;
+    }
+
+    .overlay.open {
+      display: grid;
+      align-items: center;
+      justify-items: center;
+    }
+
+    .overlay-inner {
+      background: white;
+      width: 700px;
+      padding: 20px;
+    }
+
+    .overlay img {
+      width: 100%;
+    }
+    </style>
+  
+<script>
+  const gallery = document.querySelector('.gallery');
+  const overlay = document.querySelector('.overlay');
+  const overlayImage = overlay.querySelector('img');
+  const overlayClose = overlay.querySelector('.close');
+
+  function generateHTML([h, v]) {
+    return `
+    <div class="item h${h} v${v}">
+      <img src="images/bolid_miniatures/${randomNumber(12)}.png">
+      <div class="item__overlay">
+        <button>View →</button>
+      </div>
+    </div>
+    `;
+  }
+
+  function randomNumber(limit) {
+    return Math.floor(Math.random() * limit) + 1;
+  }
+
+  function handleClick(e) {
+    const src = e.currentTarget.querySelector('img').src;
+    overlayImage.src = src;
+    overlay.classList.add('open');
+  }
+
+
+  function close() {
+    overlay.classList.remove('open');
+  }
+
+  const digits = Array.from({
+    length: 20
+  }, () => [randomNumber(4), randomNumber(4)]).concat([
+    [1, 1],
+    [1, 1],
+    [1, 1],
+    [1,
+      1
+    ],
+    [1, 1],
+    [1, 1],
+    [1, 1],
+    [1, 1],
+    [1, 1],
+    [1, 1],
+    [1, 1],
+    [1, 1],
+    [1, 1],
+    [1, 1],
+    [1, 1],
+    [1, 1],
+    [1, 1],
+    [1, 1]
+  ])
+
+  const html = digits.map(generateHTML).join('');
+  console.log(html);
+
+  gallery.innerHTML = html;
+
+  const items = document.querySelectorAll('.item');
+
+  items.forEach(item => item.addEventListener('click', handleClick));
+
+  overlayClose.addEventListener('click', close);
+
+  const navButton = document.querySelector('button[aria-expanded]');
+
+  function toggleNav({
+    target
+  }) {
+    const expanded = target.getAttribute('aria-expanded') === 'true' || false;
+    navButton.setAttribute('aria-expanded', !expanded);
+  }
+  navButton.addEventListener('click', toggleNav);
+</script>
 
 </body>
 
